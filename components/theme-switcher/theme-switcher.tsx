@@ -14,8 +14,8 @@ export default function ThemeSwitcher() {
         checked={theme === 'light'}
         onChange={toggleTheme}
       />
-      <Sun className="swap-on w-6 h-6" />
-      <Moon className="swap-off w-6 h-6" />
+      <Sun className="swap-off w-6 h-6" />
+      <Moon className="swap-on w-6 h-6" />
     </label>
   )
 }
