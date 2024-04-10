@@ -1,5 +1,4 @@
-import ProductItem from '@/components/products/product-item'
-import data from '@/lib/data'
+import BasketDetails from '@/components/basket/basket-details'
 import React from 'react'
 
 export const metadata = {
@@ -7,5 +6,5 @@ export const metadata = {
 }
 
 export default function BasketPage() {
-  return <div>Shopping Basket</div>
+  return <BasketDetails />
 }

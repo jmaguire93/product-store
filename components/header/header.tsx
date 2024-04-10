@@ -16,7 +16,7 @@ export default function Header() {
           <Link className="btn btn-ghost text-lg" href="/">
             Product Store
           </Link>
-          <div className="flex gap-2">
+          <div className="flex gap-2 px-2">
             <ul>
               <li>
                 <Link href={'/basket'} className="btn btn-ghost">
