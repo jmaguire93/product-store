@@ -1,14 +1,15 @@
 import ProductDetails from '@/components/products/product-details'
-import data from '@/lib/data'
-import { Product } from '@/lib/models/product'
+import ProductService from '@/lib/services/product-service'
 import React from 'react'
+import { convertDocToObject } from '../../../../lib/utils/index'
 
 export async function generateMetadata({
   params
 }: {
   params: { slug: string }
 }) {
-  const product = data.products.find((item) => item.slug === params.slug)
+  const product = await getProduct(params.slug)
+
   if (!product) {
     return { title: 'Product not found' }
   }
@@ -22,14 +23,16 @@ type ProductPageProps = {
   params: { slug: string }
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const product = data.products.find(
-    (item) => item.slug === params.slug
-  ) as Product
+export default async function ProductPage({ params }: ProductPageProps) {
+  const product = await getProduct(params.slug)
 
   if (!product) {
     return <div>Product not found</div>
   }
 
-  return <ProductDetails product={product} />
+  return <ProductDetails product={convertDocToObject(product)} />
+}
+
+function getProduct(slug: string) {
+  return ProductService.getProductBySlug(slug)
 }

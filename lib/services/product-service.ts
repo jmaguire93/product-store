@@ -9,8 +9,16 @@ const getProducts = cache(async () => {
   return products as Product[]
 })
 
+const getProductBySlug = cache(async (slug: string) => {
+  await dbConnect()
+  const product = await ProductModel.findOne({ slug }).lean()
+
+  return product as Product
+})
+
 const ProductService = {
-  getProducts
+  getProducts,
+  getProductBySlug
 }
 
 export default ProductService
