@@ -21,7 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider>
-          <div className="min-h-screen flex flex-col">
+          <div
+            style={{ minHeight: 'calc(100vh - 64px)' }}
+            className="min-h-screen flex flex-col mt-16"
+          >
             <Header />
             {children}
             <Footer />

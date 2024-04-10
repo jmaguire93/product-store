@@ -10,8 +10,8 @@ type ProductItemProps = {
 
 export default function ProductItem({ product }: ProductItemProps) {
   return (
-    <div className="card bg-primary-300 shadow-xl mb-4">
-      <figure className="mt-4">
+    <div className="card bg-base-300 shadow-xl mb-4">
+      <figure className="mt-">
         <Link href={`/product/${product.slug}`}>
           <Image
             src={product.image}

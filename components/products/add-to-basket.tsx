@@ -20,19 +20,16 @@ export default function AddToBasket({ item }: AddToBasketProps) {
 
   return existingItem ? (
     <div>
-      <button className="btn btn-sm" onClick={() => removeFromBasket(item)}>
+      <button className="btn" onClick={() => removeFromBasket(item)}>
         -
       </button>
       <span className="mx-2 text-sm">{existingItem.quantity}</span>
-      <button className="btn btn-sm" onClick={() => addToBasket(item)}>
+      <button className="btn" onClick={() => addToBasket(item)}>
         +
       </button>
     </div>
   ) : (
-    <button
-      className="btn btn-primary btn-sm"
-      onClick={() => addToBasket(item)}
-    >
+    <button className="btn btn-primary" onClick={() => addToBasket(item)}>
       Add to Basket
     </button>
   )

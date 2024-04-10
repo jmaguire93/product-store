@@ -10,9 +10,9 @@ export default function Header() {
   const { items } = useBasketStore()
 
   return (
-    <header>
+    <header className="fixed top-0 w-full z-10">
       <nav>
-        <div className="navbar bg-base-300 justify-between">
+        <div className="navbar shadow bg-base-300 justify-between">
           <Link className="btn btn-ghost text-lg" href="/">
             Product Store
           </Link>
