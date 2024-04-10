@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import ThemeSwitcher from '../theme-switcher/theme-switcher'
+import { ShoppingCart } from 'lucide-react'
 
 export default function Header() {
   return (
@@ -10,7 +11,16 @@ export default function Header() {
           <Link className="btn btn-ghost text-lg" href="/">
             Product Store
           </Link>
-          <ThemeSwitcher />
+          <div className="flex gap-2">
+            <ul className="">
+              <li>
+                <Link href={'/cart'} className="btn btn-ghost">
+                  <ShoppingCart />
+                </Link>
+              </li>
+            </ul>
+            <ThemeSwitcher />
+          </div>
         </div>
       </nav>
     </header>
