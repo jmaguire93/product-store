@@ -30,7 +30,7 @@ export default function AddToBasket({ item }: AddToBasketProps) {
     </div>
   ) : (
     <button
-      className="btn btn-primary btn-sm text-xs"
+      className="btn btn-primary btn-sm"
       onClick={() => addToBasket(item)}
     >
       Add to Basket

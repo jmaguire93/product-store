@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { OrderItem } from '../models/order'
-import roundToTwoDecimals from '../utils'
+import { roundToTwoDecimals } from '../utils'
 
 type Basket = {
   items: OrderItem[]

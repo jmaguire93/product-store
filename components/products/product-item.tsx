@@ -16,6 +16,7 @@ export default function ProductItem({ product }: ProductItemProps) {
           <Image
             src={product.image}
             alt={product.name}
+            priority
             width={300}
             height={300}
             className="object-cover h-64 w-full rounded"

@@ -1,5 +1,6 @@
 import ProductItem from '@/components/products/product-item'
-import data from '@/lib/data'
+import ProductService from '@/lib/services/product-service'
+import { convertDocToObject } from '@/lib/utils'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -7,12 +8,17 @@ export const metadata: Metadata = {
   description: 'A sample product store'
 }
 
-export default function Home() {
+export default async function Home() {
+  const products = await ProductService.getProducts()
+
   return (
     <>
       <div className="grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {data.products.map((product) => (
-          <ProductItem key={product.name} product={product} />
+        {products.map((product) => (
+          <ProductItem
+            key={product.name}
+            product={convertDocToObject(product)}
+          />
         ))}
       </div>
     </>
