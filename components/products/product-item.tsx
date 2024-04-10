@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 import { Product } from '@/lib/models/product'
+import AddToBasket from './add-to-basket'
 
 type ProductItemProps = {
   product: Product
@@ -28,6 +29,7 @@ export default function ProductItem({ product }: ProductItemProps) {
         <p className="mb-2">{product.description}</p>
         <div className="card-actions flex items-center justify-between">
           <span className="text-2xl">£{product.price}</span>
+          <AddToBasket item={{ ...product, quantity: 0 }} />
         </div>
       </div>
     </div>
