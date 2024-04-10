@@ -1,9 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import React from 'react'
 import ThemeSwitcher from '../theme-switcher/theme-switcher'
 import { ShoppingBasket } from 'lucide-react'
+import useBasketStore from '@/lib/hooks/useBasketStore'
 
 export default function Header() {
+  const { items } = useBasketStore()
+
   return (
     <header>
       <nav>
@@ -12,10 +17,13 @@ export default function Header() {
             Product Store
           </Link>
           <div className="flex gap-2">
-            <ul className="">
+            <ul>
               <li>
                 <Link href={'/basket'} className="btn btn-ghost">
                   <ShoppingBasket />
+                  <div className="badge badge-primary badge-sm">
+                    {items.reduce((a, c) => a + c.quantity, 0)}
+                  </div>
                 </Link>
               </li>
             </ul>

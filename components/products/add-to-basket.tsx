@@ -12,7 +12,7 @@ export default function AddToBasket({ item }: AddToBasketProps) {
   const [existingItem, setExistingItem] = useState<OrderItem | undefined>(
     undefined
   )
-  const { items, addItemToBasket } = useBasketStore()
+  const { items, addToBasket, removeFromBasket } = useBasketStore()
 
   useEffect(() => {
     setExistingItem(items.find((current) => current.slug === item.slug))
@@ -20,15 +20,20 @@ export default function AddToBasket({ item }: AddToBasketProps) {
 
   return existingItem ? (
     <div>
-      <button className="btn">-</button>
-      <span>{existingItem.quantity}</span>
-      <button className="btn" onClick={() => addItemToBasket(item)}>
+      <button className="btn btn-sm" onClick={() => removeFromBasket(item)}>
+        -
+      </button>
+      <span className="mx-2 text-sm">{existingItem.quantity}</span>
+      <button className="btn btn-sm" onClick={() => addToBasket(item)}>
         +
       </button>
     </div>
   ) : (
-    <button className="btn btn-primary" onClick={() => addItemToBasket(item)}>
-      Add
+    <button
+      className="btn btn-primary btn-sm text-xs"
+      onClick={() => addToBasket(item)}
+    >
+      Add to Basket
     </button>
   )
 }
