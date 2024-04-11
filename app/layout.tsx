@@ -23,7 +23,7 @@ export default function RootLayout({
         <ThemeProvider>
           <div
             style={{ minHeight: 'calc(100vh - 64px)' }}
-            className="min-h-screen flex flex-col mt-16"
+            className="min-h-screen flex flex-col mt-16 relative"
           >
             <Header />
             {children}

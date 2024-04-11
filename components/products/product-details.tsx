@@ -4,6 +4,7 @@ import React from 'react'
 import AddToBasket from './add-to-basket'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
+import BasketDrawer from '../basket/basket-drawer'
 
 type ProductDetailsProps = {
   product: Product
@@ -15,6 +16,9 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       <Link href="/" className="flex my-2">
         <ChevronLeft /> Back
       </Link>
+      <div className="absolute top-6 right-2">
+        <BasketDrawer />
+      </div>
       <div className="grid md:grid-cols-4 md:gap-3">
         <div className="md:col-span-2">
           <Image
@@ -62,7 +66,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           </ul>
         </div>
         <div>
-          <div className="card bg-base-300 shadow-xl mt-3 md:mt-0">
+          <div className="card bg-base-300 shadow mt-3 md:mt-0">
             <div className="card-body">
               <div className="mb-2 flex justify-between">
                 <div>Price</div>
