@@ -31,7 +31,7 @@ export default function BasketDrawer() {
             component={
               <div
                 style={{ height: 'calc(100vh - 139px)' }}
-                className="flex flex-col"
+                className="flex flex-col overflow-y-auto"
               >
                 <BasketList />
                 <div className="flex-1" />
