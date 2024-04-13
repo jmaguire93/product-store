@@ -10,7 +10,7 @@ export default function Header() {
   const { items } = useBasketStore()
 
   return (
-    <header className="fixed top-0 w-full z-10">
+    <header className="fixed top-0 w-full z-20">
       <nav>
         <div className="navbar shadow bg-base-300 justify-between">
           <Link className="btn btn-ghost text-lg" href="/">

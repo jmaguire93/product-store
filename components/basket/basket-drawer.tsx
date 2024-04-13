@@ -9,9 +9,9 @@ import BasketView from './basket-view'
 export default function BasketDrawer() {
   return (
     <div className="drawer drawer-end z-10">
-      <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+      <input id="basket-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content swap swap-rotate">
-        <label className="swap swap-rotate z-50" htmlFor="my-drawer-4">
+        <label className="swap swap-rotate z-10" htmlFor="basket-drawer">
           {/* this hidden checkbox controls the state */}
           <input type="checkbox" />
           <PanelRight />
@@ -22,7 +22,7 @@ export default function BasketDrawer() {
         style={{ height: 'calc(100vh - 64px)' }}
       >
         <label
-          htmlFor="my-drawer-4"
+          htmlFor="basket-drawer"
           aria-label="close sidebar"
           className="drawer-overlay drawer-button"
         ></label>
@@ -35,7 +35,9 @@ export default function BasketDrawer() {
               >
                 <BasketList />
                 <div className="flex-1" />
+                {/* <div className="mb-12 sm:mb-0"> */}
                 <CheckoutDetails />
+                {/* </div> */}
               </div>
             }
           />

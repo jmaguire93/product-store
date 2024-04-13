@@ -29,17 +29,16 @@ export default function BasketDetails() {
                   {items.map((item) => (
                     <tr key={item.slug}>
                       <td>
-                        <Link
-                          href={`/product/${item.slug}`}
-                          className="flex items-center"
-                        >
-                          <Image
-                            src={item.image}
-                            alt={item.name}
-                            width={50}
-                            height={50}
-                          />
-                          <span className="px-2">{item.name}</span>
+                        <Link href={`/product/${item.slug}`}>
+                          <div>
+                            <span>{item.name}</span>
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              width={50}
+                              height={50}
+                            />
+                          </div>
                         </Link>
                       </td>
                       <td>

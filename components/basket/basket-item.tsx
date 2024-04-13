@@ -11,7 +11,7 @@ type BasketItemProps = {
 export default function BasketItem({ item }: BasketItemProps) {
   return (
     <div className="card bg-base-300 shadow mb-4 ">
-      <div className="flex">
+      <div className="flex justify-between">
         <Link href={`/product/${item.slug}`} className="p-2">
           <Image
             src={item.image}
@@ -21,7 +21,7 @@ export default function BasketItem({ item }: BasketItemProps) {
             className="rounded-lg"
           />
         </Link>
-        <div className="text-center">
+        <div className="text-center p-2">
           <h2 className="pt-2">{item.name}</h2>
           <span className="text-xl">£{item.price}</span>
           <AddToBasket item={{ ...item, quantity: 0 }} />
