@@ -31,13 +31,13 @@ export default function BasketDrawer() {
             component={
               <div
                 style={{ height: 'calc(100vh - 139px)' }}
-                className="flex flex-col overflow-y-auto"
+                className="flex flex-col"
               >
                 <BasketList />
                 <div className="flex-1" />
-                {/* <div className="mb-12 sm:mb-0"> */}
-                <CheckoutDetails />
-                {/* </div> */}
+                <div className="mb-12 sm:mb-0">
+                  <CheckoutDetails />
+                </div>
               </div>
             }
           />
