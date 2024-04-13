@@ -35,7 +35,7 @@ export default function BasketDrawer() {
               >
                 <BasketList />
                 <div className="flex-1" />
-                <div className="mb-16 sm:mb-0">
+                <div className="mb-20 sm:mb-0">
                   <CheckoutDetails />
                 </div>
               </div>
